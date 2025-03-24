@@ -73,34 +73,40 @@ This will:
 
 
 ## Further Scope and Improvements
+
 There are many opportunities to enhance this project:
 
-* Enhanced Signature Database 
-- Integrate a more comprehensive, regularly updated signature database. 
-- Use secure HTTPS with certificate validation and digital signatures on updates. 
-- Implement efficient data structures (like hash tables or bloom filters) for fast signature lookup. 
-* Advanced Heuristics 
-- Expand heuristic checks to include analysis of file structure, suspicious API call patterns, or even static disassembly of binaries. 
-- Integrate fuzzy hashing (e.g., ssdeep) to catch polymorphic malware. 
-- Consider behavioral analysis techniques or sandboxing for dynamic analysis. 
-* Improved Real-Time Monitoring
-- Extend inotify-based monitoring to recursively watch multiple directories. 
-- Explore Linux’s fanotify API for on-access scanning (which can intercept file open events). 
-- Integrate scheduling and caching to avoid re-scanning unchanged files. 
-* Process and Network Analysis Enhancements 
-- Enhance process scanning to analyze process memory, network connections, and inter-process communications. 
-- Build more sophisticated packet analysis with deeper protocol inspection.
-- Integrate known blacklists or threat intelligence feeds for network destinations. 
-* Self-Protection and Hardening 
-- Implement privilege separation (e.g., using sandboxing or minimal privileges for different modules). 
-- Add watchdog processes to ensure the antivirus remains active and cannot be easily terminated. 
-- Harden against common attacks (buffer overflows, format string vulnerabilities) and incorporate code auditing tools. 
-* User Interface 
-- Develop a user-friendly command-line or graphical interface to view scan results, manage quarantined files, and configure scanning options. 
-- Integrate logging and reporting features for system administrators.
-* Performance Optimizations 
-- Introduce multithreading and asynchronous I/O for improved performance. 
-- Optimize file scanning and network monitoring modules to reduce CPU and memory overhead.
+### 1. Enhanced Signature Database
+- **Integration:** Incorporate a more comprehensive, regularly updated signature database.
+- **Security:** Utilize secure HTTPS with certificate validation and digital signatures on updates.
+- **Efficiency:** Implement efficient data structures (e.g., hash tables or bloom filters) for fast signature lookup.
 
+### 2. Advanced Heuristics
+- **File Analysis:** Expand heuristic checks to include analysis of file structure, suspicious API call patterns, or even static disassembly of binaries.
+- **Fuzzy Hashing:** Integrate fuzzy hashing (e.g., ssdeep) to detect polymorphic malware.
+- **Behavioral Analysis:** Consider dynamic analysis techniques such as sandboxing or behavioral monitoring for improved detection accuracy.
+
+### 3. Improved Real-Time Monitoring
+- **Directory Monitoring:** Extend inotify-based monitoring to recursively watch multiple directories.
+- **Advanced APIs:** Explore Linux’s fanotify API for on-access scanning to intercept file open events.
+- **Optimization:** Integrate scheduling and caching mechanisms to avoid re-scanning unchanged files.
+
+### 4. Process and Network Analysis Enhancements
+- **Process Analysis:** Enhance process scanning to include memory analysis, network connections, and inter-process communications.
+- **Network Inspection:** Develop more sophisticated packet analysis with deeper protocol inspection.
+- **Threat Intelligence:** Integrate known blacklists or threat intelligence feeds to monitor network destinations.
+
+### 5. Self-Protection and Hardening
+- **Privilege Separation:** Implement privilege separation (e.g., using sandboxing or minimal privileges for different modules).
+- **Resilience:** Add watchdog processes to ensure the antivirus remains active and cannot be easily terminated.
+- **Security Auditing:** Harden the system against common attacks (e.g., buffer overflows, format string vulnerabilities) and incorporate code auditing tools.
+
+### 6. User Interface
+- **Interface Development:** Create a user-friendly command-line or graphical interface to view scan results, manage quarantined files, and configure scanning options.
+- **Logging & Reporting:** Integrate comprehensive logging and reporting features for system administrators.
+
+### 7. Performance Optimizations
+- **Concurrency:** Introduce multithreading and asynchronous I/O for improved performance.
+- **Resource Optimization:** Optimize file scanning and network monitoring modules to reduce CPU and memory overhead.
 
 
