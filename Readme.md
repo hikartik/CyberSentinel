@@ -75,32 +75,32 @@ This will:
 ## Further Scope and Improvements
 There are many opportunities to enhance this project:
 
-* Enhanced Signature Database \
- ->Integrate a more comprehensive, regularly updated signature database. \
-->Use secure HTTPS with certificate validation and digital signatures on updates. \
-->Implement efficient data structures (like hash tables or bloom filters) for fast signature lookup. 
-* Advanced Heuristics \
-->Expand heuristic checks to include analysis of file structure, suspicious API call patterns, or even static disassembly of binaries. \
-->Integrate fuzzy hashing (e.g., ssdeep) to catch polymorphic malware. \
-->Consider behavioral analysis techniques or sandboxing for dynamic analysis. 
-* Improved Real-Time Monitoring \
-->Extend inotify-based monitoring to recursively watch multiple directories. \
-->Explore Linux’s fanotify API for on-access scanning (which can intercept file open events). \
-->Integrate scheduling and caching to avoid re-scanning unchanged files. 
-* Process and Network Analysis Enhancements \
-->Enhance process scanning to analyze process memory, network connections, and inter-process communications. \
-->Build more sophisticated packet analysis with deeper protocol inspection.
-Integrate known blacklists or threat intelligence feeds for network destinations. 
-* Self-Protection and Hardening \
-->Implement privilege separation (e.g., using sandboxing or minimal privileges for different modules). \
-->Add watchdog processes to ensure the antivirus remains active and cannot be easily terminated. \
-->Harden against common attacks (buffer overflows, format string vulnerabilities) and incorporate code auditing tools. 
-* User Interface \
-->Develop a user-friendly command-line or graphical interface to view scan results, manage quarantined files, and configure scanning options. \
-->Integrate logging and reporting features for system administrators.
-* Performance Optimizations \
-->Introduce multithreading and asynchronous I/O for improved performance. \
-->Optimize file scanning and network monitoring modules to reduce CPU and memory overhead.
+* Enhanced Signature Database 
+- Integrate a more comprehensive, regularly updated signature database. 
+- Use secure HTTPS with certificate validation and digital signatures on updates. 
+- Implement efficient data structures (like hash tables or bloom filters) for fast signature lookup. 
+* Advanced Heuristics 
+- Expand heuristic checks to include analysis of file structure, suspicious API call patterns, or even static disassembly of binaries. 
+- Integrate fuzzy hashing (e.g., ssdeep) to catch polymorphic malware. 
+- Consider behavioral analysis techniques or sandboxing for dynamic analysis. 
+* Improved Real-Time Monitoring
+- Extend inotify-based monitoring to recursively watch multiple directories. 
+- Explore Linux’s fanotify API for on-access scanning (which can intercept file open events). 
+- Integrate scheduling and caching to avoid re-scanning unchanged files. 
+* Process and Network Analysis Enhancements 
+- Enhance process scanning to analyze process memory, network connections, and inter-process communications. 
+- Build more sophisticated packet analysis with deeper protocol inspection.
+- Integrate known blacklists or threat intelligence feeds for network destinations. 
+* Self-Protection and Hardening 
+- Implement privilege separation (e.g., using sandboxing or minimal privileges for different modules). 
+- Add watchdog processes to ensure the antivirus remains active and cannot be easily terminated. 
+- Harden against common attacks (buffer overflows, format string vulnerabilities) and incorporate code auditing tools. 
+* User Interface 
+- Develop a user-friendly command-line or graphical interface to view scan results, manage quarantined files, and configure scanning options. 
+- Integrate logging and reporting features for system administrators.
+* Performance Optimizations 
+- Introduce multithreading and asynchronous I/O for improved performance. 
+- Optimize file scanning and network monitoring modules to reduce CPU and memory overhead.
 
 
 
