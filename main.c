@@ -46,8 +46,18 @@ void run_tests() {
     if (scan_result || heuristic_result) {
         printf("\n[Test] Quarantining %s...\n", dummy_file);
         quarantine_file(dummy_file, "./quarantine");
+
+        char quarantined_path[256];
+        snprintf(quarantined_path, sizeof(quarantined_path), "./quarantine/%s", dummy_file);
+        if (access(quarantined_path, F_OK) == 0) {
+            printf("[Test] Quarantine success: %s exists.\n", quarantined_path);
+            remove(quarantined_path); // cleanup after verification
+        } else {
+            printf("[Test] Quarantine failed: %s not found.\n", quarantined_path);
+        }
     } else {
         printf("\n[Test] %s is clean. No quarantine needed.\n", dummy_file);
+        remove(dummy_file); // cleanup
     }
     
     // Test 5: Realtime directory monitoring.
