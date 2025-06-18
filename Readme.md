@@ -27,6 +27,7 @@ On Debian/Ubuntu, you can install dependencies with:
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev libpcap-dev libcurl4-openssl-dev
 ```
+After installing dependencies, verify the build with `make clean && make`.
 ### Compile
 
 An updated Makefile is provided. To build the project, simply run:
