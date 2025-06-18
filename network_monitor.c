@@ -4,7 +4,7 @@
 #include <pcap.h>
 
 void packet_handler(u_char *user, const struct pcap_pkthdr *header, const u_char *packet) {
-    printf("[Network Monitor] Captured packet of length: %d\n", header->len);
+    printf("[Network Monitor] Captured packet of length: %u\n", header->len);
     // In a real system, packet analysis would occur here.
 }
 
