@@ -1,6 +1,6 @@
 # Linux Antivirus Project
 
-This project is a modular antivirus solution implemented in C for Linux. It combines several detection techniques including signature-based scanning, heuristic analysis, real-time file monitoring, process scanning, network monitoring, and file quarantine. It also features an update module that downloads malware signatures from an online source (in JSON format) using libcurl and parses them with cJSON.
+This project is a modular antivirus solution implemented in C for Linux. It combines several detection techniques including signature-based scanning, heuristic analysis, real-time file monitoring, process scanning, network monitoring, and file quarantine. It also features an update module that downloads malware signatures from an online source using libcurl.
 
 
 ## External Libraries
@@ -10,7 +10,6 @@ The project uses several external libraries:
 - **libpcap**: For capturing network packets.
 - **libcurl**: For downloading signature updates from an online source.
 - **inotify**: A Linux kernel API for real-time file system monitoring (no extra library required).
-- **cJSON**: A lightweight JSON parser for C (included as `cJSON.c` and `cJSON.h` in the project).
 
 ## Building the Project
 
