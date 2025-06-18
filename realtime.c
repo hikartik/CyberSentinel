@@ -3,12 +3,13 @@
 #include "realtime.h"
 #include <sys/inotify.h>
 #include <unistd.h>
+#include <errno.h>
 
 #define EVENT_SIZE  (sizeof(struct inotify_event))
 #define BUF_LEN     (1024 * (EVENT_SIZE + 16))
 
 void monitor_directory(const char *directory) {
-    int fd = inotify_init();
+    int fd = inotify_init1(IN_NONBLOCK);
     if (fd < 0) {
         perror("inotify_init");
         return;
@@ -21,11 +22,17 @@ void monitor_directory(const char *directory) {
     }
     printf("[Realtime] Monitoring directory: %s\n", directory);
     char buffer[BUF_LEN];
-    // For demo, stop after 5 events.
+    // For demo, stop after 5 events or 5 seconds without activity.
     int event_count = 0;
-    while (event_count < 5) {
+    int idle_cycles = 0;
+    while (event_count < 5 && idle_cycles < 5) {
         int length = read(fd, buffer, BUF_LEN);
         if (length < 0) {
+            if (errno == EAGAIN || errno == EWOULDBLOCK) {
+                idle_cycles++;
+                sleep(1);
+                continue;
+            }
             perror("read");
             break;
         }
