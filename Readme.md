@@ -45,7 +45,7 @@ There are two modes to run the antivirus:
 To scan a specific file, run:
 
 ```
-/antivirus <file_to_scan>
+./antivirus <file_to_scan>
 ```
 
 The antivirus will:
